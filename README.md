@@ -137,6 +137,6 @@ python
 
 📞 Contato
 
-Desenvolvedor: Seu Nome
-Email: seu.email@universidade.edu
+Desenvolvedor: Alfredo Allan
+Email: kali.sonic.developer@gmail.com
 Repositório: github.com/alfredo-allan/sistema-rpc-python
