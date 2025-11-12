@@ -1,0 +1,134 @@
+      :root {
+        --bs-body-bg: #1e1e1e;
+        --bs-body-color: #f8f9fa;
+        --bs-dark: #2d2d30;
+        --bs-darker: #252526;
+        --bs-primary: #0d6efd;
+        --bs-success: #198754;
+        --bs-info: #0dcaf0;
+        --bs-warning: #ffc107;
+        --bs-danger: #dc3545;
+        --bs-python: #3776ab;
+      }
+
+      body {
+        background-color: var(--bs-body-bg);
+        color: var(--bs-body-color);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .navbar {
+        background-color: var(--bs-darker) !important;
+      }
+
+      .card {
+        background-color: var(--bs-dark);
+        border: 1px solid #3e3e42;
+      }
+
+      .code-container {
+        background-color: #1e1e1e;
+        border-radius: 5px;
+        padding: 15px;
+        font-family: "Consolas", "Courier New", monospace;
+        font-size: 14px;
+        overflow-x: auto;
+        border: 1px solid #3e3e42;
+      }
+
+      .output-container {
+        background-color: #0d1117;
+        border-radius: 5px;
+        padding: 15px;
+        font-family: "Consolas", "Courier New", monospace;
+        font-size: 14px;
+        overflow-x: auto;
+        border: 1px solid #3e3e42;
+        color: #00ff00;
+      }
+
+      .keyword {
+        color: #569cd6;
+      }
+
+      .string {
+        color: #ce9178;
+      }
+
+      .comment {
+        color: #6a9955;
+      }
+
+      .function {
+        color: #dcdcaa;
+      }
+
+      .class-name {
+        color: #4ec9b0;
+      }
+
+      .python-builtin {
+        color: #9cdcfe;
+      }
+
+      .section-title {
+        border-bottom: 2px solid var(--bs-python);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      .nav-link.active {
+        background-color: var(--bs-python) !important;
+      }
+
+      .explanation-card {
+        border-left: 4px solid var(--bs-info);
+      }
+
+      .use-case-card {
+        border-left: 4px solid var(--bs-success);
+      }
+
+      pre {
+        margin: 0;
+        white-space: pre-wrap;
+      }
+
+      .icon-container {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(55, 118, 171, 0.2);
+        margin-right: 10px;
+      }
+
+      .console-line {
+        margin: 2px 0;
+      }
+
+      .console-server {
+        color: #569cd6;
+      }
+
+      .console-client {
+        color: #dcdcaa;
+      }
+
+      .console-main {
+        color: #4ec9b0;
+      }
+
+      .console-input {
+        color: #ce9178;
+      }
+
+      .console-output {
+        color: #00ff00;
+      }
+
+      .badge-python {
+        background-color: var(--bs-python);
+      }

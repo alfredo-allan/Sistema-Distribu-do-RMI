@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema Distribuído RPC - Python Demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../css/caso-de-uso.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="bi bi-diagram-3 me-2"></i>
+          Sistema Distribuído RPC - Python
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#introducao">Introdução</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#demo-interativa">Demo Interativa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#documentacao">Documentação</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-dark py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <h1 class="display-4 fw-bold">Sistema Distribuído RPC</h1>
+            <p class="lead">
+              Implementação em Python usando XML-RPC com Demonstração Interativa
+            </p>
+            <div class="d-flex flex-wrap gap-2 mt-4">
+              <span class="badge badge-python">Python XML-RPC</span>
+              <span class="badge bg-success">Sistema Distribuído</span>
+              <span class="badge bg-info">Cliente-Servidor</span>
+              <span class="badge bg-warning text-dark">Demo Interativa</span>
+            </div>
+          </div>
+          <div class="col-lg-4 text-center">
+            <i class="bi bi-file-code display-1" style="color: #3776ab"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Introdução -->
+    <section id="introducao" class="py-5">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="bi bi-info-circle me-2"></i>
+          Introdução ao Projeto
+        </h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card h-100 explanation-card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <div class="icon-container">
+                    <i class="bi bi-lightbulb"></i>
+                  </div>
+                  O que é XML-RPC?
+                </h5>
+                <p class="card-text">
+                  XML-RPC é um protocolo de chamada de procedimento remoto que
+                  usa XML para codificar suas chamadas e HTTP como protocolo de
+                  transporte. É uma alternativa simples e eficiente para
+                  implementação de sistemas distribuídos.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100 use-case-card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <div class="icon-container">
+                    <i class="bi bi-gear"></i>
+                  </div>
+                  Demonstração Prática
+                </h5>
+                <p class="card-text">
+                  Esta página contém uma demonstração interativa completa de um
+                  sistema cliente-servidor usando XML-RPC. Você pode executar a
+                  simulação completa e ver o funcionamento em tempo real.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Interativa -->
+    <section id="demo-interativa" class="py-5 bg-darker">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="bi bi-play-circle me-2"></i>
+          Demonstração Interativa
+        </h2>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="bi bi-files me-2"></i>
+                  Arquivos do Projeto
+                </h5>
+                <div class="file-list-container">
+                  <ul id="fileList" class="list-group list-group-flush">
+                    <!-- Arquivos serão inseridos aqui pelo JavaScript -->
+                  </ul>
+                </div>
+
+                <div class="mt-3">
+                  <button
+                    id="createFilesBtn"
+                    class="btn btn-success w-100 mb-2"
+                  >
+                    <i class="bi bi-file-earmark-plus"></i> Criar Todos os
+                    Arquivos
+                  </button>
+                  <button
+                    id="downloadFilesBtn"
+                    class="btn btn-outline-primary w-100 mb-2"
+                  >
+                    <i class="bi bi-download"></i> Download dos Arquivos
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="bi bi-terminal me-2"></i>
+                  Controles
+                </h5>
+                <button id="runDemoBtn" class="btn btn-warning w-100 mb-2">
+                  <i class="bi bi-play-fill"></i> Executar Demonstração Completa
+                </button>
+                <button
+                  id="clearTerminalBtn"
+                  class="btn btn-outline-secondary w-100"
+                >
+                  <i class="bi bi-eraser"></i> Limpar Terminal
+                </button>
+              </div>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="bi bi-info-circle me-2"></i>
+                  Sobre a Demo
+                </h5>
+                <p class="small">
+                  Esta demonstração simula a execução completa de um sistema
+                  distribuído RPC, incluindo:
+                </p>
+                <ul class="small">
+                  <li>Criação de ambiente virtual</li>
+                  <li>Inicialização do servidor</li>
+                  <li>Conexão do cliente</li>
+                  <li>Chamadas RPC remotas</li>
+                  <li>Processamento distribuído</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="bi bi-terminal me-2"></i>
+                  Terminal de Execução
+                </h5>
+                <div id="terminalOutput" class="terminal">
+                  <div class="console-line console-info">
+                    💡 Terminal pronto. Clique em "Executar Demonstração
+                    Completa" para começar.
+                  </div>
+                  <div class="console-line console-info">
+                    📚 Esta demo simula um sistema completo de conversão de
+                    texto para maiúsculas via RPC.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="bi bi-diagram-3 me-2"></i>
+                  Fluxo do Sistema
+                </h5>
+                <div class="row text-center">
+                  <div class="col-md-3">
+                    <div class="p-3 border rounded bg-dark">
+                      <i class="bi bi-file-code display-6 text-primary"></i>
+                      <h6 class="mt-2">Arquivos Python</h6>
+                      <small>Servidor, Cliente e Testador</small>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="p-3 border rounded bg-dark">
+                      <i class="bi bi-server display-6 text-success"></i>
+                      <h6 class="mt-2">Servidor RPC</h6>
+                      <small>Porta 8000</small>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="p-3 border rounded bg-dark">
+                      <i class="bi bi-laptop display-6 text-warning"></i>
+                      <h6 class="mt-2">Cliente RPC</h6>
+                      <small>Conexão HTTP</small>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="p-3 border rounded bg-dark">
+                      <i class="bi bi-arrow-left-right display-6 text-info"></i>
+                      <h6 class="mt-2">Comunicação</h6>
+                      <small>XML-RPC</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documentação -->
+    <section id="documentacao" class="py-5">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="bi bi-file-text me-2"></i>
+          Documentação Técnica
+        </h2>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="bi bi-question-circle me-2"></i>
+                  Como Funciona o RPC?
+                </h5>
+                <p class="card-text">
+                  RPC (Remote Procedure Call) permite que um programa execute
+                  procedimentos em outra máquina como se fossem chamadas locais.
+                  O XML-RPC usa XML sobre HTTP para esta comunicação.
+                </p>
+                <div class="code-container small mt-3">
+                  <code>
+                    // Cliente<br />
+                    resultado = servidor.converter_para_maiuscula("texto")<br />
+                    <br />
+                    // Servidor processa e retorna<br />
+                    return texto.upper() // "TEXTO"
+                  </code>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="bi bi-list-check me-2"></i>
+                  Componentes do Sistema
+                </h5>
+                <ul>
+                  <li>
+                    <strong>Servidor RPC:</strong> Escuta na porta 8000 e
+                    processa requisições
+                  </li>
+                  <li>
+                    <strong>Cliente RPC:</strong> Conecta ao servidor e faz
+                    chamadas remotas
+                  </li>
+                  <li><strong>XML-RPC:</strong> Protocolo de comunicação</li>
+                  <li><strong>Threading:</strong> Execução concorrente</li>
+                  <li><strong>Logging:</strong> Monitoramento do sistema</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="bi bi-lightning me-2"></i>
+                  Vantagens do XML-RPC
+                </h5>
+                <ul>
+                  <li>
+                    <strong>Simplicidade:</strong> Fácil implementação e
+                    entendimento
+                  </li>
+                  <li>
+                    <strong>Interoperabilidade:</strong> Funciona entre
+                    diferentes linguagens
+                  </li>
+                  <li><strong>HTTP:</strong> Usa protocolo web padrão</li>
+                  <li><strong>XML:</strong> Formato universal e legível</li>
+                  <li>
+                    <strong>Firewall-friendly:</strong> Usa porta HTTP padrão
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="bi bi-cpu me-2"></i>
+                  Casos de Uso Real
+                </h5>
+                <p class="card-text">Sistemas RPC são usados em:</p>
+                <ul>
+                  <li>APIs de serviços web</li>
+                  <li>Sistemas de microserviços</li>
+                  <li>Integração entre sistemas heterogêneos</li>
+                  <li>Processamento distribuído</li>
+                  <li>Comunicação entre aplicações</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark py-4 mt-5">
+      <div class="container text-center">
+        <p class="mb-0">
+          Sistema Distribuído RPC - Demonstração Interativa em Python
+        </p>
+        <p class="text-muted">
+          Desenvolvido para demonstração educacional de Sistemas Distribuídos
+        </p>
+      </div>
+    </footer>
+
+    <!-- Modal para visualização de arquivos -->
+    <div class="modal fade" id="fileModal" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content bg-dark">
+          <div class="modal-header">
+            <h5 class="modal-title" id="fileModalLabel">Conteúdo do Arquivo</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="fileModalBody">
+              <!-- Conteúdo do arquivo será inserido aqui -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/caso-de-uso.js"></script>
+  </body>
+</html>
